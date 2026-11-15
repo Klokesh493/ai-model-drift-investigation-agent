@@ -1,0 +1,88 @@
+[
+  {
+    "name": "primary",
+    "input": "main.json",
+    "actions": [
+      "population",
+      "quality",
+      "freshness"
+    ],
+    "expected": "investigate_drift",
+    "citations": [
+      "freshness",
+      "population",
+      "quality"
+    ]
+  },
+  {
+    "name": "shift-only",
+    "input": "shift-only.json",
+    "actions": [
+      "freshness",
+      "quality",
+      "population"
+    ],
+    "expected": "watch",
+    "citations": [
+      "freshness",
+      "population",
+      "quality"
+    ]
+  },
+  {
+    "name": "late-labels",
+    "input": "late-labels.json",
+    "actions": [
+      "freshness",
+      "quality",
+      "population"
+    ],
+    "expected": "review",
+    "citations": [
+      "freshness",
+      "population",
+      "quality"
+    ]
+  },
+  {
+    "name": "stale",
+    "input": "stale.json",
+    "actions": [
+      "freshness",
+      "quality",
+      "population"
+    ],
+    "expected": "review",
+    "citations": [
+      "freshness",
+      "population",
+      "quality"
+    ]
+  },
+  {
+    "name": "normal",
+    "input": "normal.json",
+    "actions": [
+      "freshness",
+      "quality",
+      "population"
+    ],
+    "expected": "observe",
+    "citations": [
+      "freshness",
+      "population",
+      "quality"
+    ]
+  },
+  {
+    "name": "missing-evidence-budget",
+    "input": "main.json",
+    "actions": [
+      "shell"
+    ],
+    "expected": "review",
+    "budget": 1,
+    "stop": "budget_exhausted",
+    "citations": []
+  }
+]

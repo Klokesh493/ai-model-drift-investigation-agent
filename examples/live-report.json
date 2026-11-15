@@ -1,0 +1,62 @@
+{
+  "citations": [
+    "freshness",
+    "population",
+    "quality"
+  ],
+  "decision": "investigate_drift",
+  "evidence": {
+    "freshness": {
+      "data": {
+        "age_minutes": 15,
+        "stale": false
+      },
+      "id": "freshness",
+      "sha256": "c7578b41dcc599cde22533e4098c042c2110173b9daf2f478dda5e25c9024e8d"
+    },
+    "population": {
+      "data": {
+        "assessed": 1,
+        "drifted": [
+          {
+            "feature": "checkout_value",
+            "psi": 1.4328
+          }
+        ],
+        "insufficient": []
+      },
+      "id": "population",
+      "sha256": "85ef5e1a21cddb33b2be2cb5e3f859ca2183cd9b6600ac6a7f5e1dca3f3a3f98"
+    },
+    "quality": {
+      "data": {
+        "baseline": 0.94,
+        "current": 0.79
+      },
+      "id": "quality",
+      "sha256": "700e2d684a8297bfb3ae9e9ebdd99c65ea69accbc0006d96d5216577d0b641fe"
+    }
+  },
+  "missing": [],
+  "model": "qwen2.5:0.5b",
+  "planner": "ollama",
+  "reason": "feature shift and measured quality loss coexist",
+  "stop": "evidence_complete",
+  "trace": [
+    {
+      "event": "observed",
+      "source": "population",
+      "step": 1
+    },
+    {
+      "event": "observed",
+      "source": "quality",
+      "step": 2
+    },
+    {
+      "event": "observed",
+      "source": "freshness",
+      "step": 3
+    }
+  ]
+}

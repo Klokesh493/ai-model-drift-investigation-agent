@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "name": "checkout_value",
+      "baseline_bins": [
+        100,
+        100,
+        100
+      ],
+      "current_bins": [
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "labels": {
+    "baseline": {
+      "total": 200,
+      "correct": 188
+    },
+    "current": {
+      "total": 200,
+      "correct": 188
+    }
+  },
+  "age_minutes": 15
+}
